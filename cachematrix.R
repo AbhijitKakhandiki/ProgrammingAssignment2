@@ -1,5 +1,25 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Test the caching functionality on matrix inversion using the following example in R
+
+## > mat <- matrix(1:4,2,2)   # make a matrix
+
+## > solve(mat)         # check it has an inverse (not required if you're sure)
+## [,1] [,2]
+## [1,]   -2  1.5
+## [2,]    1 -0.5
+
+## > matrixObject <- makeCacheMatrix(mat)  # run function to create an object to hold the cached data
+## > 
+## > cacheSolve(matrixObject)      # this checks to see if the result is cached; if not, it caches it
+## [,1] [,2]
+## [1,]   -2  1.5
+## [2,]    1 -0.5
+## > 
+## > cacheSolve(matrixObject)    # 2nd access so now we just fetch cached data
+##   getting cached data           #  this is printed when the data is in the cache
+## [,1] [,2]
+## [1,]   -2  1.5
+## [2,]    1 -0.5
+## > 
 
 ## Creates a special matrix object that can cache its inverse
 
